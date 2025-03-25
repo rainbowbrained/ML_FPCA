@@ -2,9 +2,15 @@
 
 Functional PCA for dimensionality reduction. Skoltech group project, ML 2025
 
- ![hands](https://github.com/user-attachments/assets/5ad5a069-0a99-43d9-a2ff-80c8a2478bac)
+![hands](https://github.com/user-attachments/assets/5ad5a069-0a99-43d9-a2ff-80c8a2478bac)
+
+![hands_2](https://github.com/user-attachments/assets/aad5695e-e09f-4268-8084-5f13a485a7f9)
+
+![hands_3](https://github.com/user-attachments/assets/13f12c24-a11c-40be-be3b-d8603843b919)
 
 Image reconstruction for HaGRID dataset for different number of components and resolutions
+
+# Description
 
 PCA is the simplest linear method for dimensionaliy reduction. It learns the set of basis vectors that fits the data in the most parsimonius way. Sometimes data can be analyzed not in terms of a set of distinct features (like usual tabular data), but rather as a functions, evaluated at some grid (time series, images, video). Changing the resolution is simply the change of grid at which the functions are evaluated. For functional data there exist an extesion of PCA called Functional PCA (FPCA). In this project our goal was to explore the FPCA approach to dimensionality reductoin, its advantages and disadvantages over the classical PCA, its limitations and ways to overcome them.
 
