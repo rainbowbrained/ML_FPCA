@@ -12,7 +12,7 @@ Image reconstruction for HaGRID dataset for different number of components and r
 
 # Description
 
-PCA is the simplest linear method for dimensionaliy reduction. It learns the set of basis vectors that fits the data in the most parsimonius way. Sometimes data can be analyzed not in terms of a set of distinct features (like usual tabular data), but rather as a functions, evaluated at some grid (time series, images, video). Changing the resolution is simply the change of grid at which the functions are evaluated. For functional data there exist an extesion of PCA called Functional PCA (FPCA). In this project our goal was to explore the FPCA approach to dimensionality reductoin, its advantages and disadvantages over the classical PCA, its limitations and ways to overcome them.
+PCA is the simplest linear method for dimensionaliy reduction. It learns the set of basis vectors that fits the data in the most parsimonius way. Sometimes data can be analyzed not in terms of a set of distinct features (like usual tabular data), but rather as a functions, evaluated at some grid (time series, images, video). Changing the resolution is simply the change of grid at which the functions are evaluated. For functional data there exist an extesion of PCA called Functional PCA (FPCA). In this project our goal was to explore the FPCA approach to dimensionality reductoin, its advantages and disadvantages over the classical PCA, its limitations and ways to overcome them
 
 # Research steps
 
@@ -25,3 +25,21 @@ PCA is the simplest linear method for dimensionaliy reduction. It learns the set
 4. We applied FPCA to two multi-resolution image datasets - CIFAR10 and HaGRID. For both datasets, a comprehensive study was conducted regarding the required number of components in FPCA, the influence of image resolution and classification quality for different classification algorithms, and in addition, the quality metrics of the reconstructed images and their relationship with the number of components were numerically determined. The files notebooks/FPCA_multi_res.ipynb and notebooks/FPCA_multi_res_HaGRID.ipynb correspond to this part of the study
 
 5. In the last part of the study, we studied the curse of dimensionality for FPCA. We performed a literature review on the problem, including old and new papers on covariance matrix estimation and smoothing in high-dimensional spaces, and also experimented with popular approaches to combat the curse of dimensionality on the HAM10000 dataset in the FDApy library. The file notebooks/FPCA_HAM10000.ipynb corresponds to this part of the study
+
+# Conclusions
+
+Our study allowed us to establish the advantages of FPCA when working with functional data, test its performance on real data, and evaluate the potential for solving problems arising from the curse of dimensionality. Extensive testing on 3 multi-resolution datasets allowed us to qualitatively and quantitatively evaluate image restoration and its impact on the performance of classifiers. The final_report.pdf presents the results of both the literature review and the above experiments
+
+# Requirements
+
+Python 3.10, FDApy 1.0.3, numpy 2.2.4, matplotlib 3.10.1, scikit-learn 1.6.1, tensorflow 2.19.0, scikit-image 0.25.2
+
+# Reproducibility
+
+All code is run top-down in notebooks sequentially. Random number generators are not fixed, as they do not significantly affect either the FPCA conclusions or the classification quality after reconstruction
+
+Important: a large number of components requires significant amounts of memory and may not run on a system with a small amount of RAM. Try reducing the number of components if you encounter a problem
+
+# Participants
+
+Anita Toleutaeva, Denis Suchkov, Ildar Saiapov, Oleg Kobzarev
