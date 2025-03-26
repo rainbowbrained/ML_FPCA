@@ -10,11 +10,11 @@ Functional PCA for dimensionality reduction. Skoltech group project, ML 2025
 
 Image reconstruction for HaGRID dataset for different number of components and resolutions
 
-# Description
+# 📌 Description
 
 PCA is the simplest linear method for dimensionaliy reduction. It learns the set of basis vectors that fits the data in the most parsimonius way. Sometimes data can be analyzed not in terms of a set of distinct features (like usual tabular data), but rather as a functions, evaluated at some grid (time series, images, video). Changing the resolution is simply the change of grid at which the functions are evaluated. For functional data there exist an extesion of PCA called Functional PCA (FPCA). In this project our goal was to explore the FPCA approach to dimensionality reductoin, its advantages and disadvantages over the classical PCA, its limitations and ways to overcome them
 
-# Research steps
+# 🔎 Research steps
 
 1. We conducted a literature review on FPCA, including papers devoted to the basic idea of ​​the method and papers devoted to the problem in a high-dimensional space and with sparse data. The files reports/early_report.pdf and reports/final_report.pdf correspond to this part of the study
 
@@ -26,20 +26,46 @@ PCA is the simplest linear method for dimensionaliy reduction. It learns the set
 
 5. In the last part of the study, we studied the curse of dimensionality for FPCA. We performed a literature review on the problem, including old and new papers on covariance matrix estimation and smoothing in high-dimensional spaces, and also experimented with popular approaches to combat the curse of dimensionality on the HAM10000 dataset in the FDApy library. The file notebooks/FPCA_HAM10000.ipynb corresponds to this part of the study
 
-# Conclusions
+# 📝 Conclusions
 
 Our study allowed us to establish the advantages of FPCA when working with functional data, test its performance on real data, and evaluate the potential for solving problems arising from the curse of dimensionality. Extensive testing on 3 multi-resolution datasets allowed us to qualitatively and quantitatively evaluate image restoration and its impact on the performance of classifiers. The final_report.pdf presents the results of both the literature review and the above experiments
 
-# Requirements
+# 🔨 Requirements
 
-Python 3.10, FDApy 1.0.3, numpy 2.2.4, matplotlib 3.10.1, scikit-learn 1.6.1, tensorflow 2.19.0, scikit-image 0.25.2
+The requred packages can be installed from ``requirements.txt``:
 
-# Reproducibility
+        pip install -r requirements.txt
+
+Python 3.10, FDApy 1.0.3, numpy 2.2.4, matplotlib 3.10.1, scikit-learn 1.6.1, tensorflow 2.19.0, scikit-image 0.25.2, catboost 1.2.7, scipy 1.15.2, xgboost 3.0.0, pandas 2.2.3, pillow 11.1.0, keras 3.9.0, seaborn 0.13.2.
+
+# 💻 Reproducibility
 
 All code is run top-down in notebooks sequentially. Random number generators are not fixed, as they do not significantly affect either the FPCA conclusions or the classification quality after reconstruction
 
 Important: a large number of components requires significant amounts of memory and may not run on a system with a small amount of RAM. Try reducing the number of components if you encounter a problem
 
-# Participants
+# 📰 Datasets
+
+1. Link to MNIST dataset [kaggle.com/datasets/hojjatk/mnist-dataset](https://www.kaggle.com/datasets/hojjatk/mnist-dataset).
+
+2. Link to CIFAR10 dataset [kaggle.com/c/cifar-10](https://www.kaggle.com/c/cifar-10/).
+
+3. Link to HaGRID dataset [kaggle.com/datasets/kapitanov/hagrid](https://www.kaggle.com/datasets/kapitanov/hagrid).
+   
+4. Link to HAM10000 dataset [kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000).
+
+# 📐 Classification models used
+
+In our study, we considered different classification models to evaluate the quality of functional data recovery:
+
+1. SVM Classifier for MNIST dataset 
+
+2. CatBoost Classifier for CIFAR10, HaGRID and HAM10000 datasets
+
+3. CatBoost Classifier for CIFAR10 and HaGRID datasets
+   
+5. MLPClassifier from sklearn for CIFAR10 and HaGRID datasets
+
+# 👯 Participants
 
 Anita Toleutaeva, Denis Suchkov, Ildar Saiapov, Oleg Kobzarev
