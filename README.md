@@ -62,7 +62,7 @@ In our study, we considered different classification models to evaluate the qual
 
 2. CatBoost Classifier for CIFAR10, HaGRID and HAM10000 datasets
 
-3. CatBoost Classifier for CIFAR10 and HaGRID datasets
+3. XGBoost Classifier for CIFAR10 and HaGRID datasets
    
 5. MLPClassifier from sklearn for CIFAR10 and HaGRID datasets
 
